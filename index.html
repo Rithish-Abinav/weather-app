@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assests/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="open-page">
+    <div class="front-image">
+        
+    </div>
+    <p id="discover">Discover the Weather in Your City</p>
+    <p id="get">Get to know your weather maps and radar precipitations forecast</p>
+    <button id="start">Get Started</button>
+</div>
+
+
+    <div class="weather-page">
+        <div class="top">
+    
+           <div class="input"> <input id="input" type="text" placeholder="Enter the city name">
+    <button id="search"><i class="glass fa-solid fa-magnifying-glass"></i></button>
+    <div class="dummy"></div>
+           </div>
+            <div class="change">
+                <div class="day">
+                    <img src="assests/images/icons8-sun-96.png">
+                </div>
+                <div class="night">
+                    <img src="assests/images/icons8-moon-symbol-90.png">
+                </div>
+            </div>
+        </div>
+
+
+    <h2 id="todays">Today's Report</h2>
+    <p class="place">location</p>
+    <div class="weather-image">
+        <img id="weatherimg" src="assests/images/sun.png">
+    </div>
+    <p id="weather-report"> climate</p>
+    <div class="celsius">
+    <p id="celsius">0</p><span id="span">°</span><span id="c">c</span>
+    </div>
+
+<section>
+    <div class="one">
+        <div class="image first">
+            <img src="assests/images/wind.png">
+        </div>
+        <p id="one-c">0</p>
+        <p id="one-cc">Wind</p>
+    </div>
+    <div class="two">
+        <div class="image second">
+            <img src="assests/images/humidity.png">
+        </div>
+        <p id="two-c">0</p>
+        <p id="two-cc">Humidity</p>
+    </div>
+    <div class="three">
+        <div class="image third">
+            <img src="assests/images/chance.png">
+        </div>
+        <p id="three-c">0</p>
+        <p id="three-cc">Chance of rain</p>
+    </div>
+</section>
+
+<footer>
+    <div class="home"><i class="a icons fa-solid fa-house"></i></div>
+    <div class="find"><i class="b icons fa-solid fa-magnifying-glass"></i></div>
+    <div class="setting"><i class="c icons fa-solid fa-gear"></i></div>
+    <div class="account"><i class="d icons fa-solid fa-user"></i></div>
+</footer>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+        let openpage=document.querySelector(".open-page")
+        let weatherpage=document.querySelector(".weather-page")
+        let start=document.querySelector("#start");
+        start.addEventListener("click",goto);
+        function goto(){
+            openpage.style.display="none"
+            weatherpage.style.display="block"
+
+        }
+        let inp=document.querySelector("#input");
+        let btn=document.querySelector("#search");
+        btn.classList.add("searchs")
+        let cel=document.querySelector("#celsius")
+        let weatherimage=document.querySelector("#weatherimg");
+        let weatherreport=document.querySelector("#weather-report");
+        let first=document.querySelector(".first");
+        let second=document.querySelector(".second");
+        let third=document.querySelector(".third");
+        let spa=document.querySelector("span")
+        let humidity=document.getElementById("two-c");
+        let humidityy=document.getElementById("two-cc");
+        let wind=document.getElementById("one-c");
+        let windd=document.getElementById("one-cc");
+        let rain=document.getElementById("three-c");
+        let rainn=document.getElementById("three-cc");
+        let day=document.getElementsByClassName("day")[0];
+        let night=document.getElementsByClassName("night")[0];
+        let place=document.querySelector(".place");
+        let dummy=document.querySelector(".dummy");
+        let wp=document.querySelector(".weather-page");
+        let c=document.querySelector("#c");
+        let icons=document.querySelector(".a");
+            let icons1=document.querySelector(".b");
+            let icons2=document.querySelector(".c");
+            let icons3=document.querySelector(".d");
+        dummy.addEventListener("click",show);
+        let today=document.querySelector("#todays")
+        function show(){
+            dummy.style.display="none";
+            inp.style.display="block"
+            btn.classList.remove("searchs");
+        }
+        
+        night.classList.add("active");
+      
+            night.addEventListener("click",nightclick)
+            function nightclick(){
+                night.classList.add("active"); 
+                day.classList.remove("activee");
+                cel.style.color="white";
+                spa.style.color="white";
+                humidity.style.color="white";
+                humidityy.style.color="white";
+                rain.style.color="white";
+                rainn.style.color="white";
+                wind.style.color="white";
+                windd.style.color="white";
+                humidity.style.color="white";
+                today.style.color="white";
+                weatherreport.style.color="white";
+                place.style.color="white";
+                c.style.color="white"
+                wp.classList.remove("aaa");
+                icons.style.color="lightskyblue";
+                icons1.style.color="lightskyblue"
+                icons2.style.color="lightskyblue"
+                icons3.style.color="lightskyblue"
+            }
+            day.addEventListener("click",dayclick)
+           
+            function dayclick(){
+                day.classList.add("activee"); 
+                night.classList.remove("active");
+                wp.classList.add("aaa");
+                cel.style.color="black";
+                spa.style.color="black";
+                humidity.style.color="black";
+                humidityy.style.color="black";
+                rain.style.color="black";
+                rainn.style.color="black";
+                wind.style.color="black";
+                windd.style.color="black";
+                humidity.style.color="black";
+                today.style.color="black";
+                weatherreport.style.color="black";
+                place.style.color="black";
+                c.style.color="black"
+                icons.style.color="orange";
+                icons1.style.color="orange"
+                icons2.style.color="orange"
+                icons3.style.color="orange"
+            }
+      
+        btn.addEventListener("click" , function(){
+        fetch('https://api.openweathermap.org/data/2.5/weather?q='+inp.value+'&units=metric&appid=fc769a5605837af7fe06844eadb034df')
+            .then(res => {
+                return res.json();
+                
+            })
+            .then(data => {
+                console.log(data);
+        
+                cel.innerHTML=data.main.temp;
+humidity.innerHTML=data.main.humidity+"%";
+wind.innerHTML=data.wind.speed+" Km/h";
+if(data.main.temp<30 && data.main.temp>=27){
+    weatherimage.src="assests/images/wheather img/sun.png";
+    rain.innerHTML="63%";
+    weatherreport.innerHTML="Its Sunny";
+}
+if(data.main.temp>28 && data.main.temp<30){
+    weatherimage.src="assests/images/wheather img/suncloud.png";
+    rain.innerHTML="70%";
+    weatherreport.innerHTML="Its cloudy";
+}
+if(data.main.temp>=23 && data.main.temp<=27){
+    weatherimage.src="assests/images/wheather img/cloudy.png";
+    rain.innerHTML="85%";
+    weatherreport.innerHTML="Its cloudy";
+}
+if(data.main.temp>=15 && data.main.temp<=22){
+    weatherimage.src="assests/images/wheather img/rain.png";
+    rain.innerHTML="85%";
+    weatherreport.innerHTML="Its raining";
+}
+if(data.main.temp>0 && data.main.temp<15){
+    weatherimage.src="assests/images/wheather img/snow.png";
+    rain.innerHTML="95%";
+    weatherreport.innerHTML="Its snowfall";
+   
+}
+place.innerHTML=inp.value;
+              
+
+            })
+
+
+           
+        })      
+    </script>
+</body>
+</html>
